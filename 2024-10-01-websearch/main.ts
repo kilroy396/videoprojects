@@ -12,7 +12,7 @@ const alltexts = await getCleanedText(urls);
 await answerQuery(query, alltexts);
 
 async function getNewsUrls(query: string) {
-	const searchResults = await fetch(`${searchUrl}?q=${query}&format=json`);
+	const searchResults = await fetch(`${searchUrl}search?q=${query}&format=json`);
 	const searchResultsJson: { results: Array<{ url: string }> } =
 		await searchResults.json();
 	const urls = searchResultsJson.results
